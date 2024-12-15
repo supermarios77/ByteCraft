@@ -40,7 +40,7 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-4">
             <Link href="/support">
-              <Button className="py-2 px-3 text-sm font-medium rounded-xl bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 transition flex items-center space-x-1">
+              <Button className="py-2 px-3 text-sm rounded-xl bg-[#1ACC85] text-black hover:bg-[#1AC480] focus:outline-none focus:ring-2 focus:ring-offset-2 transition flex items-center space-x-1">
                 <span>Support</span>
               </Button>
             </Link>

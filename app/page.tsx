@@ -1,8 +1,12 @@
-import React from 'react'
+import { FeaturedApps } from '@/components/FeaturedApp'
+import { Hero } from '@/components/Hero'
 
 const Home = () => {
   return (
-    <div></div>
+    <div>
+      <Hero />
+      <FeaturedApps />
+    </div>
   )
 }
 
