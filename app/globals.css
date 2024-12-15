@@ -60,6 +60,24 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .prose {
+    @apply max-w-none;
+  }
+  .prose h1 {
+    @apply text-3xl font-bold mb-6;
+  }
+  .prose h2 {
+    @apply text-2xl font-semibold mt-8 mb-4;
+  }
+  .prose h3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+  }
+  .prose ul {
+    @apply list-disc list-inside;
+  }
+  .prose p {
+    @apply mb-4;
+  }
 }
 
 @layer base {
