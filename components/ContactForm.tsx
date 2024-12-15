@@ -39,7 +39,6 @@ export function ContactForm() {
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
         <CardTitle>Contact Us</CardTitle>
-        <CardDescription>Fill out the form below and we&apos;ll get back to you as soon as possible.</CardDescription>
       </CardHeader>
       <CardContent>
         <form action={handleSubmit} className="space-y-4">
