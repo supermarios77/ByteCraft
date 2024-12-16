@@ -11,7 +11,7 @@ import image3 from "@/public/Tasbihly/3.png";
 export function FeaturedApps() {
   return (
     <section className="w-full py-40 bg-background">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
         <div className="text-center mb-32 relative">
           <div className="inline-block">
             <div className="absolute -top-12 left-1/2 -translate-x-1/2">
@@ -25,7 +25,7 @@ export function FeaturedApps() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-12 max-w-6xl w-full place-items-center">
           <FeatureSection
             image={image1}
             title="Effortless Counting"
@@ -69,7 +69,7 @@ interface FeatureSectionProps {
 
 function FeatureSection({ image, title, description }: FeatureSectionProps) {
   return (
-    <div className="flex flex-col items-center text-center group">
+    <div className="flex flex-col items-center justify-center text-center group w-full max-w-sm">
       <div
         className="relative w-[260px] h-[540px] mb-12
                     rounded-[3rem] overflow-hidden
