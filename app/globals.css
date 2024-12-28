@@ -96,6 +96,9 @@ body {
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
 }
 
 @keyframes blob {
@@ -105,6 +108,25 @@ body {
   100% { transform: translate(0px, 0px) scale(1); }
 }
 
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .animate-blob {
   animation: blob 7s infinite;
+}
+
+.animate-gradient {
+  animation: gradient 8s linear infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
 }
