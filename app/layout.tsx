@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -10,12 +10,21 @@ import siteConfig from "@/lib/metadata"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
 });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: siteConfig.themeColor,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -24,13 +33,8 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["iOS apps", "mobile applications", "app development", "ByteCraft", "iOS development"],
-  authors: [
-    {
-      name: siteConfig.creator,
-      url: siteConfig.url,
-    },
-  ],
+  keywords: siteConfig.keywords,
+  authors: siteConfig.authors,
   creator: siteConfig.creator,
   openGraph: {
     type: "website",
@@ -48,6 +52,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: siteConfig.social.twitter,
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -56,6 +67,20 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   alternates: {
     canonical: siteConfig.url,
+  },
+  verification: {},
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'notranslate': false,
+    },
+    nocache: false,
   },
 }
 
@@ -66,6 +91,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >

@@ -1,10 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Organization, WithContext } from 'schema-dts'
 
-export default function JsonLd({ data }: { data: any }) {
+type JsonLdProps = {
+  data: WithContext<Organization>
+}
+
+export default function JsonLd({ data }: JsonLdProps) {
+  const jsonString = JSON.stringify(data, null, 2)
+  
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonString }}
+      key="jsonld-organization"
     />
   )
 } 

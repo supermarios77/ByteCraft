@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Sparkles, Zap, Shield, Smartphone, Gem, Gauge, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Card } from "./ui/card";
