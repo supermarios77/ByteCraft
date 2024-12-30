@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import Spline from "@splinetool/react-spline";
-
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import SplineWrapper from "./SplineWrapper";
 
 const Hero = () => {
   return (
@@ -15,9 +14,10 @@ const Hero = () => {
         <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-[#BE75FF]/20 rounded-full blur-[128px] animate-blob animation-delay-4000" />
       </div>
 
-      <div className="absolute inset-0 z-10 opacity-75">
-        <Spline scene="https://prod.spline.design/X64iImK3XYtXd7p7/scene.splinecode" />
-      </div>
+      <SplineWrapper 
+        scene="https://prod.spline.design/X64iImK3XYtXd7p7/scene.splinecode"
+        className="absolute inset-0 z-10 opacity-75"
+      />
 
       <div className="relative z-20 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl py-32 sm:py-48 lg:py-56">
