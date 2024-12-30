@@ -19,6 +19,7 @@
     "@splinetool/react-spline": "2.2.6",
     "@splinetool/runtime": "0.9.493",
     "@tabler/icons-react": "^3.24.0",
+    "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
