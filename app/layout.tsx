@@ -10,26 +10,13 @@ import siteConfig from "@/lib/metadata"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: 'swap',
 });
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: siteConfig.themeColor,
-}
-
-=======
-});
-
->>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -70,21 +57,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
-<<<<<<< HEAD
-  verification: {},
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'notranslate': false,
-    },
-    nocache: false,
-  },
 }
 
 export default function RootLayout({
@@ -94,13 +66,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-<<<<<<< HEAD
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      </head>
-=======
->>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >

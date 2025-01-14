@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { Download, Star, Apple, Rocket, Zap, ArrowRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
-import SplineWrapper from "./SplineWrapper";
+import Spline from '@splinetool/react-spline/next';
 
 const container = {
   hidden: { opacity: 0 },
@@ -60,7 +60,7 @@ export default function CTA() {
         transition={{ duration: 1 }}
         className="absolute inset-0 z-10 [mask-image:radial-gradient(circle_at_center,white,transparent_70%)]"
       >
-        <SplineWrapper 
+        <Spline 
           scene="https://prod.spline.design/qfWGv-lGixvzqotE/scene.splinecode"
         />
       </motion.div>

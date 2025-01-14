@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import SplineWrapper from "./SplineWrapper";
+import Spline from '@splinetool/react-spline/next';
 
 const Hero = () => {
   return (
@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-[#BE75FF]/20 rounded-full blur-[128px] animate-blob animation-delay-4000" />
       </div>
 
-      <SplineWrapper 
+      <Spline
         scene="https://prod.spline.design/X64iImK3XYtXd7p7/scene.splinecode"
         className="absolute inset-0 z-10 opacity-75"
       />
