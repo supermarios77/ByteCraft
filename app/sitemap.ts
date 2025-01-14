@@ -1,24 +1,16 @@
-import { MetadataRoute } from 'next'
 import siteConfig from "@/lib/metadata"
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date()
-
-  // Core pages
-  const routes: MetadataRoute.Sitemap = [
-    {
-      url: siteConfig.url,
-      lastModified,
-      changeFrequency: 'daily' as const,
-      priority: 1,
-    },
-    {
-      url: `${siteConfig.url}/apps`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    }
-  ]
+export default async function sitemap() {
+  const routes = [
+    "",
+    "/privacy",
+    "/support",
+  ].map((route) => ({
+    url: `${siteConfig.url}${route}`,
+    lastModified: new Date().toISOString().split('T')[0],
+    changeFrequency: 'daily',
+    priority: route === '' ? 1 : 0.8,
+  }))
 
   return routes
 } 

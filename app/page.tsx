@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 import { Suspense } from 'react';
 import JsonLd from "@/components/JsonLd";
 import siteConfig from "@/lib/metadata";
 import { Organization, WithContext } from "schema-dts";
 import dynamic from 'next/dynamic';
 import Loading from "@/components/Loading";
+=======
+"use client";
+
+import AppShowcase from "@/components/AppShowcase";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import CTA from "@/components/CTA";
+>>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import siteConfig from "@/lib/metadata";
 
 // Dynamically import client components
 const Hero = dynamic(() => import("@/components/Hero"), {
@@ -21,21 +32,18 @@ const CTA = dynamic(() => import("@/components/CTA"), {
 });
 
 export default function Home() {
-  const jsonLd: WithContext<Organization> = {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: {
-      "@type": "ImageObject",
-      url: `${siteConfig.url}/logo.png`
-    },
+    logo: `${siteConfig.url}/logo.png`,
     description: siteConfig.description,
     sameAs: []
   };
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <>
       <JsonLd data={jsonLd} />
       <Suspense fallback={<Loading />}>
         <Hero />
@@ -50,6 +58,6 @@ export default function Home() {
         <CTA />
       </Suspense>
       <Footer />
-    </main>
+    </>
   );
 }

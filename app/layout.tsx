@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -11,12 +11,16 @@ import siteConfig from "@/lib/metadata";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+<<<<<<< HEAD
   display: "swap",
+=======
+>>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+<<<<<<< HEAD
   display: "swap",
 });
 
@@ -27,6 +31,10 @@ export const viewport: Viewport = {
   themeColor: siteConfig.themeColor,
 };
 
+=======
+});
+
+>>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -34,8 +42,13 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  authors: siteConfig.authors,
+  keywords: ["iOS apps", "mobile applications", "app development", "ByteCraft", "iOS development"],
+  authors: [
+    {
+      name: siteConfig.creator,
+      url: siteConfig.url,
+    },
+  ],
   creator: siteConfig.creator,
   openGraph: {
     type: "website",
@@ -53,13 +66,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: siteConfig.social.twitter,
-  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -69,6 +75,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+<<<<<<< HEAD
   verification: {},
   robots: {
     index: true,
@@ -84,6 +91,9 @@ export const metadata: Metadata = {
     nocache: false,
   },
 };
+=======
+}
+>>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
 
 export default function RootLayout({
   children,
@@ -92,6 +102,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+<<<<<<< HEAD
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -100,6 +111,8 @@ export default function RootLayout({
           crossOrigin=""
         />
       </head>
+=======
+>>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >

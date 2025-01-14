@@ -1,18 +1,12 @@
-import { MetadataRoute } from 'next'
 import siteConfig from "@/lib/metadata"
 
-export default function robots(): MetadataRoute.Robots {
+export default function robots() {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-      },
-      {
-        userAgent: 'GPTBot',
-      }
-    ],
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: '/private/',
+    },
     sitemap: `${siteConfig.url}/sitemap.xml`,
-    host: siteConfig.url,
   }
 } 
