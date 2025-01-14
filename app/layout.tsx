@@ -1,35 +1,30 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 import PrelineScript from "@/components/PrelineScript";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
-import siteConfig from "@/lib/metadata";
+import siteConfig from "@/lib/metadata"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-<<<<<<< HEAD
-  display: "swap",
-=======
->>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-<<<<<<< HEAD
-  display: "swap",
+  display: 'swap',
 });
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
   themeColor: siteConfig.themeColor,
-};
+}
 
 =======
 });
@@ -83,17 +78,14 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      notranslate: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'notranslate': false,
     },
     nocache: false,
   },
-};
-=======
 }
->>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
 
 export default function RootLayout({
   children,
@@ -105,28 +97,23 @@ export default function RootLayout({
 <<<<<<< HEAD
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
 =======
 >>>>>>> parent of 259ab60 (⚡️ Fix: Fix Build Errors)
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar />
-            {children}
-            <Analytics />
-            <PrelineScript />
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <PrelineScript />
+        </ThemeProvider>
       </body>
     </html>
   );
