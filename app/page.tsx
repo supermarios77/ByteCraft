@@ -7,10 +7,9 @@ import ProductsSection from "@/components/sections/ProductsSection"
 import TechStackSection from "@/components/sections/TechStackSection"
 import CustomDevSection from "@/components/sections/CustomDevSection"
 import MissionSection from "@/components/sections/MissionSection"
-import Footer from "@/components/sections/Footer"
 
 export default function BytecraftHome() {
-  const sectionCount = 6 // stats, products, techStack, customDev, mission, newsletter
+  const sectionCount = 5 // stats, products, techStack, customDev, mission
   const { setRef, visibleSections } = useMultipleIntersectionObserver(sectionCount)
 
   const handleExploreProducts = () => {
@@ -33,10 +32,6 @@ export default function BytecraftHome() {
 
   const handleViewPortfolio = () => {
     console.log("View portfolio clicked")
-  }
-
-  const handleLinkClick = (link: string) => {
-    console.log("Footer link clicked:", link)
   }
 
   return (
@@ -76,7 +71,6 @@ export default function BytecraftHome() {
         <MissionSection isVisible={visibleSections[4]} />
       </div>
 
-      <Footer onLinkClick={handleLinkClick} />
     </div>
   )
 }

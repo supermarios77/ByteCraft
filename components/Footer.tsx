@@ -7,7 +7,7 @@ interface FooterProps {
 export default function Footer({ onLinkClick }: FooterProps) {
   const links = [
     { label: "Products", href: "#products" },
-    { label: "Services", href: "#services" },
+    { label: "Support", href: "/support" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ]
