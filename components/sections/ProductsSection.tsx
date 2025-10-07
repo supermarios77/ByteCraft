@@ -18,7 +18,6 @@ interface Product {
 }
 
 interface ProductsSectionProps {
-  isVisible: boolean
   onProductClick?: (productId: string) => void
 }
 
@@ -51,15 +50,11 @@ const products: Product[] = [
   },
 ]
 
-export default function ProductsSection({ isVisible, onProductClick }: ProductsSectionProps) {
+export default function ProductsSection({ onProductClick }: ProductsSectionProps) {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null)
 
   return (
-    <section
-      className={`relative z-10 py-32 px-6 max-w-7xl mx-auto transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
-    >
+    <section className="relative z-10 py-32 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-20">
         <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-[0.9]">Our Products</h2>
         <p className="text-xl text-gray-400 font-medium max-w-2xl mx-auto leading-relaxed">

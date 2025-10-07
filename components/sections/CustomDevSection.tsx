@@ -3,18 +3,13 @@
 import { Button } from "@/components/ui/button"
 
 interface CustomDevSectionProps {
-  isVisible: boolean
   onStartProject?: () => void
   onViewPortfolio?: () => void
 }
 
-export default function CustomDevSection({ isVisible, onStartProject, onViewPortfolio }: CustomDevSectionProps) {
+export default function CustomDevSection({ onStartProject, onViewPortfolio }: CustomDevSectionProps) {
   return (
-    <section
-      className={`relative z-10 py-32 px-6 max-w-5xl mx-auto transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
-    >
+    <section className="relative z-10 py-32 px-6 max-w-5xl mx-auto">
       <div className="relative bg-gradient-to-br from-teal-500/10 to-cyan-500/10 backdrop-blur-sm rounded-[3rem] border border-teal-500/20 p-16 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a0a0a_1px,transparent_1px),linear-gradient(to_bottom,#0a0a0a_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-20"></div>
 

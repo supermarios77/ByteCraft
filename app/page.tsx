@@ -1,6 +1,5 @@
 "use client"
 
-import { useMultipleIntersectionObserver } from "@/hooks/useIntersectionObserver"
 import HeroSection from "@/components/sections/HeroSection"
 import StatsSection from "@/components/sections/StatsSection"
 import ProductsSection from "@/components/sections/ProductsSection"
@@ -9,8 +8,6 @@ import CustomDevSection from "@/components/sections/CustomDevSection"
 import MissionSection from "@/components/sections/MissionSection"
 
 export default function BytecraftHome() {
-  const sectionCount = 5 // stats, products, techStack, customDev, mission
-  const { setRef, visibleSections } = useMultipleIntersectionObserver(sectionCount)
 
   const handleExploreProducts = () => {
     // Scroll to products section or handle navigation
@@ -44,32 +41,20 @@ export default function BytecraftHome() {
         onCustomDevelopment={handleCustomDevelopment}
       />
 
-      <div ref={setRef(0)}>
-        <StatsSection isVisible={visibleSections[0]} />
-      </div>
+      <StatsSection />
 
-      <div ref={setRef(1)}>
-        <ProductsSection 
-          isVisible={visibleSections[1]} 
-          onProductClick={handleProductClick}
-        />
-      </div>
+      <ProductsSection 
+        onProductClick={handleProductClick}
+      />
 
-      <div ref={setRef(2)}>
-        <TechStackSection isVisible={visibleSections[2]} />
-      </div>
+      <TechStackSection />
 
-      <div ref={setRef(3)}>
-        <CustomDevSection 
-          isVisible={visibleSections[3]}
-          onStartProject={handleStartProject}
-          onViewPortfolio={handleViewPortfolio}
-        />
-      </div>
+      <CustomDevSection 
+        onStartProject={handleStartProject}
+        onViewPortfolio={handleViewPortfolio}
+      />
 
-      <div ref={setRef(4)}>
-        <MissionSection isVisible={visibleSections[4]} />
-      </div>
+      <MissionSection />
 
     </div>
   )

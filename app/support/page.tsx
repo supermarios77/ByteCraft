@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { Button } from "@/components/ui/button"
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Float, Environment } from "@react-three/drei"
 import type * as THREE from "three"
@@ -71,24 +71,7 @@ export default function SupportPage() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [submitMessage, setSubmitMessage] = useState("")
 
-  const faqRef = useRef<HTMLDivElement>(null)
-  const [faqVisible, setFaqVisible] = useState(false)
-
-  useEffect(() => {
-    const observerOptions = { threshold: 0.1 }
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setFaqVisible(true)
-      }
-    }, observerOptions)
-
-    if (faqRef.current) {
-      observer.observe(faqRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const [faqVisible, setFaqVisible] = useState(true)
 
   const faqs = [
     {
@@ -237,12 +220,7 @@ export default function SupportPage() {
       <section className="relative z-10 px-6 pb-32 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* FAQ Column */}
-          <div
-            ref={faqRef}
-            className={`transition-all duration-1000 ${
-              faqVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-          >
+          <div>
             <div className="mb-8">
               <h2 className="text-3xl font-black mb-3 tracking-tight">Frequently Asked Questions</h2>
               <p className="text-gray-400 font-medium">

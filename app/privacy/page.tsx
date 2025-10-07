@@ -2,7 +2,6 @@
 
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 
 function FloatingParticles() {
@@ -27,27 +26,6 @@ function FloatingParticles() {
 }
 
 export default function PrivacyPage() {
-  const [activeSection, setActiveSection] = useState("introduction")
-  const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({})
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      { threshold: 0.5, rootMargin: "-100px 0px -50% 0px" },
-    )
-
-    Object.values(sectionsRef.current).forEach((section) => {
-      if (section) observer.observe(section)
-    })
-
-    return () => observer.disconnect()
-  }, [])
 
   const sections = [
     { id: "introduction", title: "Introduction" },
@@ -103,11 +81,7 @@ export default function PrivacyPage() {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className={`block text-sm py-1 transition-colors ${
-                      activeSection === section.id
-                        ? "text-primary font-medium"
-                        : "text-muted-foreground hover:text-white"
-                    }`}
+                    className="block text-sm py-1 transition-colors text-muted-foreground hover:text-white"
                   >
                     {section.title}
                   </a>
@@ -121,9 +95,6 @@ export default function PrivacyPage() {
             <div className="prose prose-lg prose-invert max-w-none">
               <section
                 id="introduction"
-                ref={(el) => {
-                  sectionsRef.current["introduction"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Introduction</h2>
@@ -140,9 +111,6 @@ export default function PrivacyPage() {
 
               <section
                 id="data-collection"
-                ref={(el) => {
-                  sectionsRef.current["data-collection"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Data We Collect</h2>
@@ -174,9 +142,6 @@ export default function PrivacyPage() {
 
               <section
                 id="data-usage"
-                ref={(el) => {
-                  sectionsRef.current["data-usage"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">How We Use Your Data</h2>
@@ -213,9 +178,6 @@ export default function PrivacyPage() {
 
               <section
                 id="data-sharing"
-                ref={(el) => {
-                  sectionsRef.current["data-sharing"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Data Sharing</h2>
@@ -247,9 +209,6 @@ export default function PrivacyPage() {
 
               <section
                 id="cookies"
-                ref={(el) => {
-                  sectionsRef.current["cookies"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Cookies & Tracking Technologies</h2>
@@ -266,9 +225,6 @@ export default function PrivacyPage() {
 
               <section
                 id="user-rights"
-                ref={(el) => {
-                  sectionsRef.current["user-rights"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Your Rights</h2>
@@ -336,9 +292,6 @@ export default function PrivacyPage() {
 
               <section
                 id="security"
-                ref={(el) => {
-                  sectionsRef.current["security"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Data Security</h2>
@@ -355,12 +308,9 @@ export default function PrivacyPage() {
 
               <section
                 id="children"
-                ref={(el) => {
-                  sectionsRef.current["children"] = el
-                }}
                 className="mb-16"
               >
-                <h2 className="text-3xl font-bold mb-4">Children's Privacy</h2>
+                <h2 className="text-3xl font-bold mb-4">Children&apos;s Privacy</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Our services are not intended for children under the age of 13. We do not knowingly collect personal
                   information from children under 13. If you are a parent or guardian and believe your child has
@@ -370,9 +320,6 @@ export default function PrivacyPage() {
 
               <section
                 id="changes"
-                ref={(el) => {
-                  sectionsRef.current["changes"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Changes to This Policy</h2>
@@ -388,9 +335,6 @@ export default function PrivacyPage() {
 
               <section
                 id="contact"
-                ref={(el) => {
-                  sectionsRef.current["contact"] = el
-                }}
                 className="mb-16"
               >
                 <h2 className="text-3xl font-bold mb-4">Contact Us</h2>

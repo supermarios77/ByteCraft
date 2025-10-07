@@ -5,10 +5,6 @@ interface Tech {
   icon: string
 }
 
-interface TechStackSectionProps {
-  isVisible: boolean
-}
-
 const technologies: Tech[] = [
   { name: "Next.js", icon: "⚡" },
   { name: "React", icon: "⚛️" },
@@ -18,13 +14,9 @@ const technologies: Tech[] = [
   { name: "AI/ML", icon: "🤖" },
 ]
 
-export default function TechStackSection({ isVisible }: TechStackSectionProps) {
+export default function TechStackSection() {
   return (
-    <section
-      className={`relative z-10 py-20 px-6 max-w-7xl mx-auto transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
-    >
+    <section className="relative z-10 py-20 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Built with modern tech</h2>
         <p className="text-lg text-gray-400 font-medium max-w-2xl mx-auto">
